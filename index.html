@@ -16,7 +16,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'media', // 自动随系统切换深浅色
+            darkMode: 'media', 
             theme: {
                 extend: {
                     colors: {
@@ -25,10 +25,6 @@
                             400: '#38bdf8',
                             500: '#0ea5e9',
                             DEFAULT: '#A5F3FC'    // 冰蓝霓虹
-                        },
-                        brand: {
-                            star: '#C8A97E',      // Logo中的金色星标
-                            navy: '#0F172A'       // Logo的深蓝色
                         }
                     },
                     fontFamily: {
@@ -42,11 +38,8 @@
     <style>
         *:focus-visible { outline: 2px solid #0ea5e9; outline-offset: 2px; }
         .dark *:focus-visible { outline: 2px solid #A5F3FC; }
-        /* 隐藏滚动条以保持界面整洁 */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Dropdown Hover State for Tailwind */
         .group:hover .group-hover\:block { display: block; }
     </style>
 </head>
@@ -56,10 +49,8 @@
     <nav role="navigation" class="bg-white/95 dark:bg-deepspace/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
             
-            <a href="index.html" aria-label="Fidnu Home" class="flex-shrink-0 flex items-center pt-1 group">
-                <span class="font-serif text-3xl font-bold text-brand-navy dark:text-white tracking-tight group-hover:opacity-80 transition relative">
-                    F<span class="relative inline-block">i<i class="fa-solid fa-star text-[0.35em] text-brand-star absolute -top-1 left-1/2 -translate-x-1/2"></i></span>dnu
-                </span>
+            <a href="index.html" aria-label="Fidnu Home" class="flex-shrink-0 flex items-center group">
+                <img src="logo.png" alt="Fidnu Logo" class="h-8 w-auto object-contain group-hover:opacity-80 transition">
             </a>
             
             <div class="flex-1 max-w-2xl mx-auto hidden md:flex items-center">
@@ -91,183 +82,151 @@
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-8">
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
         
-        <section class="w-full lg:w-2/3 min-w-0"> <div class="flex items-center gap-2 mb-6 border-b border-slate-200 dark:border-slate-800 pb-3 overflow-x-auto no-scrollbar">
-                <button class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white px-4 py-1.5 rounded-full text-sm font-bold flex-shrink-0 transition">
-                    Hot Discussions
-                </button>
-                <button class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 px-4 py-1.5 rounded-full text-sm font-medium flex-shrink-0 transition">
-                    Latest Reports
-                </button>
-            </div>
+        <div class="flex items-center gap-2 mb-6 border-b border-slate-200 dark:border-slate-800 pb-3 overflow-x-auto no-scrollbar">
+            <button class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white px-4 py-1.5 rounded-full text-sm font-bold flex-shrink-0 transition">
+                Hot Discussions
+            </button>
+            <button class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 px-4 py-1.5 rounded-full text-sm font-medium flex-shrink-0 transition">
+                Latest Reports
+            </button>
+        </div>
 
-            <article class="flex flex-col sm:flex-row gap-4 p-5 mb-5 bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition group shadow-sm dark:shadow-none break-words">
-                <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2.5 flex-wrap">
-                        <a href="#" class="font-bold text-amber-600 dark:text-amber-500 uppercase tracking-wider hover:underline flex items-center gap-1.5">
-                            <i class="fa-solid fa-hand-holding-heart"></i> Humanitarian
-                        </a>
-                        <span>•</span>
-                        <span>May 19, 2026</span>
-                    </div>
-                    <a href="#" class="block group-hover:opacity-90 transition">
-                        <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2.5 leading-snug">
-                            Addressing the Invisible Crisis: Water Scarcity in Refugee Settlements
-                        </h2>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed font-sans mb-4">
-                            A comprehensive field report analyzing infrastructure challenges and tech-driven resource allocation strategies deployed in global crisis zones this quarter.
-                        </p>
+        <article class="flex flex-col sm:flex-row gap-4 p-5 mb-5 bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition group shadow-sm dark:shadow-none break-words">
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2.5 flex-wrap">
+                    <a href="#" class="font-bold text-amber-600 dark:text-amber-500 uppercase tracking-wider hover:underline flex items-center gap-1.5">
+                        <i class="fa-solid fa-hand-holding-heart"></i> Humanitarian
                     </a>
-                    <div class="flex items-center justify-between mt-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
-                        <div class="flex items-center gap-2">
-                            <div class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">C</div>
-                            <span>Coesse</span>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-comment"></i> 156</span>
-                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up"></i> 8.1k</span>
-                        </div>
+                    <span>•</span>
+                    <span>May 19, 2026</span>
+                </div>
+                <a href="#" class="block group-hover:opacity-90 transition">
+                    <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2.5 leading-snug">
+                        Addressing the Invisible Crisis: Water Scarcity in Refugee Settlements
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed font-sans mb-4">
+                        A comprehensive field report analyzing infrastructure challenges and tech-driven resource allocation strategies deployed in global crisis zones this quarter.
+                    </p>
+                </a>
+                <div class="flex items-center justify-between mt-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">C</div>
+                        <span>Coesse</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-comment"></i> 156</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up"></i> 8.1k</span>
                     </div>
                 </div>
-            </article>
+            </div>
+        </article>
 
-            <article class="flex flex-col sm:flex-row gap-4 p-5 mb-5 bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition group shadow-sm dark:shadow-none break-words">
-                <div class="flex-1 min-w-0">
-                    <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2.5 flex-wrap">
-                        <a href="#" class="font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-wider hover:underline flex items-center gap-1.5">
-                            <i class="fa-solid fa-leaf"></i> Environmental
-                        </a>
-                        <span>•</span>
-                        <span>May 18, 2026</span>
-                    </div>
-                    <a href="#" class="block group-hover:opacity-90 transition">
-                        <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2.5 leading-snug">
-                            Deforestation Trends in the Amazon Basin: A 2026 Data Synthesis
-                        </h2>
-                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed font-sans mb-4">
-                            Utilizing advanced satellite metrics and local reporting to assess the real impact of new enforcement policies across major sovereign ecological zones.
-                        </p>
+        <article class="flex flex-col sm:flex-row gap-4 p-5 mb-5 bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition group shadow-sm dark:shadow-none break-words">
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2.5 flex-wrap">
+                    <a href="#" class="font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-wider hover:underline flex items-center gap-1.5">
+                        <i class="fa-solid fa-leaf"></i> Environmental
                     </a>
-                    <div class="flex items-center justify-between mt-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
-                        <div class="flex items-center gap-2">
-                            <div class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">E</div>
-                            <span>EcoWatch</span>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-comment"></i> 248</span>
-                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up"></i> 12.4k</span>
-                        </div>
+                    <span>•</span>
+                    <span>May 18, 2026</span>
+                </div>
+                <a href="#" class="block group-hover:opacity-90 transition">
+                    <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2.5 leading-snug">
+                        Deforestation Trends in the Amazon Basin: A 2026 Data Synthesis
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed font-sans mb-4">
+                        Utilizing advanced satellite metrics and local reporting to assess the real impact of new enforcement policies across major sovereign ecological zones.
+                    </p>
+                </a>
+                <div class="flex items-center justify-between mt-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">E</div>
+                        <span>EcoWatch</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="flex items-center gap-1.5"><i class="fa-regular fa-comment"></i> 248</span>
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up"></i> 12.4k</span>
                     </div>
                 </div>
-            </article>
-
-        </section>
-
-        <aside class="w-full lg:w-1/3 space-y-6">
-            
-            <div class="bg-white dark:bg-slate-900/40 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
-                <h1 class="text-xl font-bold text-slate-900 dark:text-white mb-2 leading-tight">
-                    Voices for <span class="text-iceblue-500 dark:text-iceblue">Humanity</span> & the Planet
-                </h1>
-                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed mb-6">
-                    Join Fidnu, the premier global network for humanitarian action, environmental advocacy, and critical world issues.
-                </p>
-                <button class="w-full bg-iceblue-500 dark:bg-iceblue text-white dark:text-deepspace py-2.5 rounded-full text-sm font-bold hover:bg-iceblue-400 dark:hover:bg-white transition shadow-sm">
-                    Publish Report
-                </button>
             </div>
+        </article>
 
-            <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm dark:shadow-none">
-                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Active Community Groups</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold border border-emerald-100 dark:border-emerald-800/50">CC</div>
-                            <div>
-                                <h4 class="text-sm font-bold text-slate-900 dark:text-white hover:underline cursor-pointer">Climate Coalition</h4>
-                                <p class="text-xs text-slate-500 mt-0.5">12.4k members</p>
-                            </div>
-                        </div>
-                        <button class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold px-4 py-1.5 rounded-full transition">Join</button>
-                    </li>
-                </ul>
-            </div>
-
-        </aside>
     </main>
 
-    <footer class="bg-white dark:bg-slate-900/30 border-t border-slate-200 dark:border-slate-800 mt-12 pt-12 pb-6 transition-colors">
+    <footer class="bg-deepspace border-t border-slate-800 mt-12 pt-12 pb-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
                 
                 <div>
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">Explore</h4>
-                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Home</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Popular</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Search</a></li>
+                    <h4 class="text-sm font-bold text-slate-200 mb-4">Explore</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Home</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Popular</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Search</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">Community</h4>
-                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Community Rules</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Content Guidelines</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Code of Conduct</a></li>
+                    <h4 class="text-sm font-bold text-slate-200 mb-4">Community</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Community Rules</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Content Guidelines</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Code of Conduct</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">Legal</h4>
-                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Privacy Policy</a></li>
-                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Terms of Service</a></li>
-                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Copyright Notice</a></li>
-                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Accessibility Statement</a></li>
-                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Disclaimer</a></li>
-                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Data Usage Statement</a></li>
+                    <h4 class="text-sm font-bold text-slate-200 mb-4">Legal</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="legal.html" class="hover:text-iceblue-500 transition">Privacy Policy</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 transition">Terms of Service</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 transition">Copyright Notice</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 transition">Accessibility Statement</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 transition">Disclaimer</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 transition">Data Usage Statement</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">About</h4>
-                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">About Us</a></li>
-                        <li><a href="contact.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Contact</a></li>
+                    <h4 class="text-sm font-bold text-slate-200 mb-4">About</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-iceblue-500 transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-iceblue-500 transition">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="col-span-2 md:col-span-3 lg:col-span-1">
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">Language</h4>
-                    <ul class="grid grid-cols-2 gap-x-2 gap-y-3 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">English (UK)</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">English (US)</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Français</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Deutsch</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Español</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Svenska</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">日本語</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">한국어</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">繁體中文</a></li>
-                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">简体中文</a></li>
+                    <h4 class="text-sm font-bold text-slate-200 mb-4">Language</h4>
+                    <ul class="grid grid-cols-2 gap-x-2 gap-y-3 text-sm text-slate-400">
+                        <li><a href="#" class="hover:text-iceblue-500 transition">English (UK)</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">English (US)</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Français</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Deutsch</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Español</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">Svenska</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">日本語</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">한국어</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">繁體中文</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 transition">简体中文</a></li>
                     </ul>
                 </div>
 
             </div>
 
-            <div class="border-t border-slate-200 dark:border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-xs text-slate-500 dark:text-slate-500">
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-slate-500">
                     &copy; 2026 Fidnu. All rights reserved.
                 </p>
-                <p class="text-xs font-serif italic text-slate-400 dark:text-slate-500 tracking-wide text-center">
+                <p class="text-xs font-serif italic text-slate-400 tracking-wide text-center">
                     “And ye shall know the truth, and the truth shall make you free.”
                 </p>
                 <div class="flex items-center gap-4 text-slate-400">
-                    <a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition"><i class="fa-brands fa-twitter text-lg"></i></a>
-                    <a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition"><i class="fa-brands fa-github text-lg"></i></a>
+                    <a href="#" aria-label="Facebook" class="hover:text-iceblue-500 transition"><i class="fa-brands fa-facebook text-lg"></i></a>
+                    <a href="#" aria-label="Instagram" class="hover:text-iceblue-500 transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="#" aria-label="X (Twitter)" class="hover:text-iceblue-500 transition"><i class="fa-brands fa-x-twitter text-lg"></i></a>
                 </div>
             </div>
 

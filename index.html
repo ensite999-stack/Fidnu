@@ -155,6 +155,7 @@
                 </div>
             </div>
         </article>
+
     </main>
 
     <footer class="bg-deepspace border-t border-slate-800 mt-12 pt-16 pb-8">
@@ -199,17 +200,17 @@
 
             <div class="border-t border-slate-800 pt-10 mb-12">
                 <h4 class="text-sm font-bold text-slate-200 mb-6 text-center md:text-left">Language</h4>
-                <ul class="grid grid-cols-2 sm:grid-cols-5 gap-x-4 gap-y-5 text-sm text-slate-400 text-center md:text-left">
-                    <li><a href="#" class="hover:text-white transition block">English (UK)</a></li>
-                    <li><a href="#" class="hover:text-white transition block">English (US)</a></li>
-                    <li><a href="#" class="hover:text-white transition block">Français</a></li>
-                    <li><a href="#" class="hover:text-white transition block">Deutsch</a></li>
-                    <li><a href="#" class="hover:text-white transition block">Español</a></li>
-                    <li><a href="#" class="hover:text-white transition block">Svenska</a></li>
-                    <li><a href="#" class="hover:text-white transition block">日本語</a></li>
-                    <li><a href="#" class="hover:text-white transition block">한국어</a></li>
-                    <li><a href="#" class="hover:text-white transition block">繁體中文</a></li>
-                    <li><a href="#" class="hover:text-white transition block">简体中文</a></li>
+                <ul class="grid grid-cols-5 gap-x-2 gap-y-4 text-[10px] sm:text-xs md:text-sm text-slate-400 text-center md:text-left whitespace-nowrap">
+                    <li><a href="#" class="hover:text-white transition block truncate">English (UK)</a></li>
+                    <li><a href="#" class="hover:text-white transition block truncate">English (US)</a></li>
+                    <li><a href="#" class="hover:text-white transition block truncate">Français</a></li>
+                    <li><a href="#" class="hover:text-white transition block truncate">Deutsch</a></li>
+                    <li><a href="#" class="hover:text-white transition block truncate">Español</a></li>
+                    <li><a href="#" class="hover:text-white transition block truncate">Svenska</a></li>
+                    <li><a href="#" class="hover:text-white transition block truncate">日本語</a></li>
+                    <li><a href="#" class="hover:text-white transition block truncate">한국어</a></li>
+                    <li><a href="#" class="hover:text-white transition block truncate">繁體中文</a></li>
+                    <li><a href="#" class="hover:text-white transition block truncate">简体中文</a></li>
                 </ul>
             </div>
 
@@ -239,23 +240,24 @@
         </div>
     </footer>
 
-    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full sm:w-auto sm:bottom-6 sm:left-6 sm:max-w-sm z-[100] transform transition-transform duration-500 translate-y-full">
-        <div class="bg-white dark:bg-slate-900 border-t sm:border border-slate-200 dark:border-slate-800 sm:rounded-2xl shadow-2xl p-5 sm:p-6">
-            <div class="flex items-start gap-3 mb-4">
-                <i class="fa-solid fa-cookie-bite text-iceblue-500 text-lg mt-0.5"></i>
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full md:w-auto md:bottom-6 md:left-6 md:max-w-[420px] z-[100] transform transition-transform duration-500 translate-y-full">
+        <div class="bg-white dark:bg-slate-900 border-t md:border border-slate-200 dark:border-slate-800 md:rounded-2xl shadow-2xl p-5 md:p-6">
+            <div class="flex items-start gap-3 mb-5">
+                <i class="fa-solid fa-cookie-bite text-iceblue-500 text-xl mt-0.5"></i>
                 <div>
                     <h3 class="text-sm font-bold text-slate-900 dark:text-white">We Value Your Privacy</h3>
                     <p class="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
-                        We use minimal cookies to enhance your experience and secure our platform. No invasive tracking is employed. <a href="legal.html" class="text-iceblue-500 hover:underline">Read Policy</a>.
+                        We use cookies to enhance your browsing experience and analyze our traffic. Please choose your preference. <a href="legal.html" class="text-iceblue-500 hover:underline">Read Policy</a>.
                     </p>
                 </div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-2">
-                <button id="accept-cookies" class="w-full bg-iceblue-500 hover:bg-iceblue-400 text-white dark:bg-iceblue dark:text-deepspace dark:hover:bg-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
+            
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button id="accept-all" class="flex-1 bg-iceblue-500 hover:bg-iceblue-400 text-white dark:bg-iceblue dark:text-deepspace dark:hover:bg-white px-4 py-2.5 rounded-xl text-xs font-bold transition shadow-sm">
                     Accept All
                 </button>
-                <button id="decline-cookies" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 px-4 py-2 rounded-xl text-xs font-semibold transition">
-                    Decline
+                <button id="accept-necessary" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 px-4 py-2.5 rounded-xl text-xs font-semibold transition">
+                    Strictly Necessary
                 </button>
             </div>
         </div>
@@ -264,10 +266,9 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const banner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('accept-cookies');
-            const declineBtn = document.getElementById('decline-cookies');
+            const acceptAllBtn = document.getElementById('accept-all');
+            const acceptNecessaryBtn = document.getElementById('accept-necessary');
 
-            // 检查本地存储，如果用户未做过选择，则延迟 0.5 秒优雅弹出
             if (!localStorage.getItem('fidnu_cookie_consent')) {
                 setTimeout(() => {
                     banner.classList.remove('translate-y-full');
@@ -276,20 +277,18 @@
 
             const hideBanner = () => {
                 banner.classList.add('translate-y-full');
-                // 等待过渡动画结束后再从 DOM 中彻底移除
                 setTimeout(() => banner.remove(), 500);
             };
 
-            // 用户点击接受
-            acceptBtn.addEventListener('click', () => {
-                localStorage.setItem('fidnu_cookie_consent', 'accepted');
+            // 接受所有
+            acceptAllBtn.addEventListener('click', () => {
+                localStorage.setItem('fidnu_cookie_consent', 'all');
                 hideBanner();
-                // 此处可添加加载必要统计脚本的逻辑
             });
 
-            // 用户点击拒绝
-            declineBtn.addEventListener('click', () => {
-                localStorage.setItem('fidnu_cookie_consent', 'declined');
+            // 仅接受必要
+            acceptNecessaryBtn.addEventListener('click', () => {
+                localStorage.setItem('fidnu_cookie_consent', 'necessary');
                 hideBanner();
             });
         });

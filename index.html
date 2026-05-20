@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. Top-Tier SEO & Meta Tags -->
+    <title>Fidnu - Global Humanitarian & Environmental Community</title>
+    <meta name="description" content="Fidnu is the premier global network for humanitarian action, environmental advocacy, and critical world issues. Join the discourse today.">
+    <meta name="keywords" content="Humanitarian, Environment, World Issues, Fidnu, Global Community, Climate Change, Human Rights, NGO, Discourse">
+    <meta name="author" content="Coesse">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Open Graph for Social Media & Generative Engines (GEO) -->
+    <meta property="og:title" content="Fidnu - Voices for Humanity & the Planet">
+    <meta property="og:description" content="Join Fidnu, the premier global network for humanitarian action and environmental advocacy.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fidnu.org/">
+    <meta property="og:site_name" content="Fidnu">
+    
+    <!-- 2. GEO (Generative Engine Optimization) - JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Fidnu",
+      "url": "https://fidnu.org/",
+      "description": "Global network for humanitarian action, environmental advocacy, and world issues.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Fidnu Community",
+        "founder": {
+          "@type": "Person",
+          "name": "Coesse"
+        }
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS with Auto Dark Mode & Custom Colors -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'media', // 核心：根据设备系统自动切换深浅色 (Auto Light/Dark)
+            theme: {
+                extend: {
+                    colors: {
+                        deepspace: '#050505',     // 深空黑
+                        iceblue: {
+                            400: '#38bdf8',       // 浅色模式下的冰蓝
+                            500: '#0ea5e9',
+                            DEFAULT: '#A5F3FC',   // 默认暗黑模式冰蓝 (Cyan 200)
+                            glow: '#67E8F9'       // 冰蓝霓虹高光
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        /* 针对无障碍 (a11y) 的焦点环设计 */
+        *:focus-visible { outline: 2px solid #0ea5e9; outline-offset: 2px; }
+        .dark *:focus-visible { outline: 2px solid #A5F3FC; }
+    </style>
+</head>
+
+<!-- Body 支持自动深浅色过渡 (transition-colors) -->
+<body class="bg-slate-50 text-slate-900 dark:bg-deepspace dark:text-slate-300 antialiased transition-colors duration-300 selection:bg-iceblue-500 selection:text-white dark:selection:bg-iceblue-glow dark:selection:text-deepspace">
+
+    <!-- Navigation Bar (无障碍支持：role="navigation") -->
+    <nav role="navigation" aria-label="Main Navigation" class="bg-white/80 dark:bg-deepspace/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-iceblue-500 dark:text-iceblue tracking-wider">Fidnu</span>
+                    <div class="hidden md:flex space-x-8 ml-10">
+                        <a href="index.html" aria-current="page" class="border-b-2 border-iceblue-500 dark:border-iceblue text-slate-900 dark:text-slate-100 px-1 pt-1 text-sm font-medium">Home</a>
+                        <a href="#topics" class="text-slate-500 dark:text-slate-400 hover:text-iceblue-500 dark:hover:text-iceblue px-1 pt-1 text-sm font-medium transition">Topics</a>
+                        <a href="#groups" class="text-slate-500 dark:text-slate-400 hover:text-iceblue-500 dark:hover:text-iceblue px-1 pt-1 text-sm font-medium transition">Groups</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Language Selection (无障碍支持：aria-label) -->
+                    <div class="relative inline-block text-left hidden sm:block">
+                        <select aria-label="Select Language" class="bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 py-1.5 px-3 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-iceblue-500 transition cursor-pointer">
+                            <option value="en">English</option>
+                            <option value="fr">Français</option>
+                            <option value="zh-CN">简体中文</option>
+                        </select>
+                    </div>
+                    <button aria-label="Sign In" class="bg-iceblue-500 hover:bg-iceblue-400 dark:bg-iceblue/10 dark:text-iceblue dark:border dark:border-iceblue/50 dark:hover:bg-iceblue dark:hover:text-deepspace text-white px-5 py-2 rounded-full text-sm font-bold transition shadow-sm">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-sky-50 to-white dark:from-slate-900/40 dark:to-deepspace py-24 px-4 overflow-hidden transition-colors duration-300">
+        <!-- 装饰性光效 (仅在暗黑模式下显现冰蓝色霓虹) -->
+        <div class="hidden dark:block absolute top-12 left-1/4 w-32 h-32 bg-iceblue-glow rounded-full opacity-10 blur-[80px]"></div>
+        <div class="hidden dark:block absolute bottom-12 right-1/4 w-40 h-40 bg-iceblue rounded-full opacity-5 blur-[100px]"></div>
+        
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <!-- 语义化 H1 标签，对 SEO 极为关键 -->
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-slate-900 dark:text-slate-100 transition-colors">
+                Voices for <span class="text-iceblue-500 dark:text-iceblue dark:drop-shadow-[0_0_12px_rgba(103,232,249,0.4)]">Humanity</span> & the Planet
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 font-light max-w-2xl mx-auto leading-relaxed transition-colors">
+                Join Fidnu, the premier global network for humanitarian action, environmental advocacy, and critical world issues.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-300 dark:border-slate-700 px-8 py-3 rounded-full font-medium hover:bg-slate-50 dark:hover:bg-slate-700 dark:hover:border-slate-500 transition shadow-sm">Explore Discussions</button>
+                <button class="bg-iceblue-500 text-white dark:bg-iceblue dark:text-deepspace px-8 py-3 rounded-full font-bold hover:bg-iceblue-400 dark:hover:bg-white transition dark:shadow-[0_0_15px_rgba(165,243,252,0.3)]">Publish Report</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="topics" role="main" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left Side: Article Feeds -->
+            <section aria-label="Article Feeds" class="w-full lg:w-2/3">
+                <!-- Topic Filter Tabs -->
+                <div role="tablist" class="border-b border-slate-200 dark:border-slate-800 mb-8 flex space-x-6 text-sm font-medium overflow-x-auto whitespace-nowrap pb-1 transition-colors">
+                    <button role="tab" aria-selected="true" class="border-b-2 border-iceblue-500 dark:border-iceblue pb-3 text-iceblue-500 dark:text-iceblue font-semibold">All Feed</button>
+                    <button role="tab" aria-selected="false" class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 pb-3 transition">Humanitarian (人道)</button>
+                    <button role="tab" aria-selected="false" class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 pb-3 transition">Environmental (环境)</button>
+                    <button role="tab" aria-selected="false" class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 pb-3 transition">World Issues</button>
+                </div>
+
+                <!-- 语义化 Article (GEO 解析的核心区块) -->
+                <article class="bg-white dark:bg-slate-900/40 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 mb-6 transition hover:border-slate-300 dark:hover:border-slate-600 shadow-sm dark:shadow-none group">
+                    <header class="mb-3">
+                        <div class="flex items-center space-x-2 text-xs font-semibold text-amber-600 dark:text-amber-500 mb-3 uppercase tracking-wider">
+                            <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> <span>Humanitarian</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-iceblue-500 dark:group-hover:text-iceblue transition cursor-pointer">
+                            Addressing the Invisible Crisis: Water Scarcity in Refugee Settlements
+                        </h2>
+                    </header>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-5 line-clamp-3 leading-relaxed transition-colors">
+                        A comprehensive field report analyzing infrastructure challenges and tech-driven resource allocation strategies deployed in global crisis zones this quarter.
+                    </p>
+                    <footer class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">C</div>
+                            <span class="font-medium text-slate-700 dark:text-slate-300">Coesse</span>
+                        </div>
+                        <time datetime="2026-05-19">May 19, 2026</time>
+                    </footer>
+                </article>
+
+                <article class="bg-white dark:bg-slate-900/40 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 mb-6 transition hover:border-slate-300 dark:hover:border-slate-600 shadow-sm dark:shadow-none group">
+                    <header class="mb-3">
+                        <div class="flex items-center space-x-2 text-xs font-semibold text-emerald-600 dark:text-emerald-500 mb-3 uppercase tracking-wider">
+                            <i class="fa-solid fa-leaf" aria-hidden="true"></i> <span>Environmental</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-iceblue-500 dark:group-hover:text-iceblue transition cursor-pointer">
+                            Deforestation Trends in the Amazon Basin: A 2026 Data Synthesis
+                        </h2>
+                    </header>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm mb-5 line-clamp-3 leading-relaxed transition-colors">
+                        Utilizing advanced satellite metrics and local reporting to assess the real impact of new enforcement policies across major sovereign ecological zones.
+                    </p>
+                    <footer class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 transition-colors">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">E</div>
+                            <span class="font-medium text-slate-700 dark:text-slate-300">EcoWatch_Global</span>
+                        </div>
+                        <time datetime="2026-05-18">May 18, 2026</time>
+                    </footer>
+                </article>
+            </section>
+
+            <!-- Right Side: Sidebar (Groups) -->
+            <aside id="groups" aria-label="Community Groups" class="w-full lg:w-1/3 space-y-6">
+                <div class="bg-white dark:bg-slate-900/40 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none transition-colors">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-5">Active Community Groups</h3>
+                    <ul class="space-y-5">
+                        <li class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div aria-hidden="true" class="w-10 h-10 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-emerald-600 dark:text-emerald-500 font-bold text-sm border border-slate-200 dark:border-slate-700">CC</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200 hover:text-iceblue-500 dark:hover:text-iceblue cursor-pointer transition">Climate Coalition</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">12.4k members</p>
+                                </div>
+                            </div>
+                            <button aria-label="Join Climate Coalition" class="text-xs bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium px-4 py-1.5 rounded-full border border-slate-200 dark:border-slate-700 transition">Join</button>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            
+        </div>
+    </main>
+
+    <!-- Footer Area -->
+    <footer role="contentinfo" class="border-t border-slate-200 dark:border-slate-800 mt-16 py-10 text-center text-xs text-slate-500 dark:text-slate-600 transition-colors">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="#" aria-label="Fidnu on Twitter" class="hover:text-iceblue-500 dark:hover:text-iceblue transition"><i class="fa-brands fa-twitter text-lg"></i></a>
+            <a href="#" aria-label="Fidnu Source on GitHub" class="hover:text-iceblue-500 dark:hover:text-iceblue transition"><i class="fa-brands fa-github text-lg"></i></a>
+        </div>
+        <p>&copy; 2026 Fidnu. All rights reserved. | <a href="legal.html" class="underline hover:text-slate-700 dark:hover:text-slate-400 transition">Legal & Compliance</a></p>
+    </footer>
+
+</body>
+</html>

@@ -5,40 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Fidnu - Voices for Humanity & the Planet</title>
-    <meta name="description" content="Fidnu combines in-depth reporting with community discourse on humanitarian action, environmental advocacy, and world issues.">
-    <meta name="author" content="Coesse">
+    <meta name="description" content="Fidnu is the premier global network combining rigorous field reports with active community discourse on humanitarian action, environmental policy, and world issues.">
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Fidnu",
-      "url": "https://fidnu.org/",
-      "description": "Global network for humanitarian and environmental discourse."
-    }
-    </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'media', // Auto Dark/Light mode
+            darkMode: 'media', // 自动随系统切换深浅色
             theme: {
                 extend: {
                     colors: {
-                        deepspace: '#050505', /* 极致深空黑 */
+                        deepspace: '#050505',     // 深空黑
                         iceblue: {
                             400: '#38bdf8',
                             500: '#0ea5e9',
-                            DEFAULT: '#A5F3FC' /* 冰蓝霓虹 */
+                            DEFAULT: '#A5F3FC'    // 冰蓝霓虹
+                        },
+                        brand: {
+                            star: '#C8A97E',      // Logo中的金色星标
+                            navy: '#0F172A'       // Logo的深蓝色
                         }
                     },
                     fontFamily: {
                         sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-                        serif: ['Merriweather', 'serif'], // Medium style titles
+                        serif: ['Merriweather', 'serif'],
                     }
                 }
             }
@@ -47,217 +42,237 @@
     <style>
         *:focus-visible { outline: 2px solid #0ea5e9; outline-offset: 2px; }
         .dark *:focus-visible { outline: 2px solid #A5F3FC; }
-        /* Hide scrollbar for clean horizontal scrolling */
+        /* 隐藏滚动条以保持界面整洁 */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Dropdown Hover State for Tailwind */
+        .group:hover .group-hover\:block { display: block; }
     </style>
 </head>
 
 <body class="bg-slate-50 text-slate-900 dark:bg-deepspace dark:text-slate-200 antialiased transition-colors duration-300 selection:bg-iceblue/30 selection:text-iceblue-500 dark:selection:text-iceblue">
 
     <nav role="navigation" class="bg-white/95 dark:bg-deepspace/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
             
-            <div class="flex items-center gap-6 flex-1">
-                <a href="index.html" class="text-2xl font-black text-slate-900 dark:text-white tracking-tight hover:text-iceblue-500 dark:hover:text-iceblue transition">
-                    Fidnu<span class="text-iceblue-500 dark:text-iceblue">.</span>
-                </a>
-                
-                <div class="hidden md:flex items-center bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-full px-4 py-2 w-96 transition-colors focus-within:border-iceblue-500 dark:focus-within:border-iceblue">
-                    <i class="fa-solid fa-magnifying-glass text-slate-400 text-sm"></i>
-                    <input type="text" placeholder="Search communities, reports, or users..." class="bg-transparent border-none outline-none w-full ml-3 text-sm text-slate-700 dark:text-slate-300 placeholder-slate-400">
+            <a href="index.html" aria-label="Fidnu Home" class="flex-shrink-0 flex items-center pt-1 group">
+                <span class="font-serif text-3xl font-bold text-brand-navy dark:text-white tracking-tight group-hover:opacity-80 transition relative">
+                    F<span class="relative inline-block">i<i class="fa-solid fa-star text-[0.35em] text-brand-star absolute -top-1 left-1/2 -translate-x-1/2"></i></span>dnu
+                </span>
+            </a>
+            
+            <div class="flex-1 max-w-2xl mx-auto hidden md:flex items-center">
+                <div class="relative w-full">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass text-slate-400 text-sm"></i>
+                    </div>
+                    <input type="text" placeholder="Search communities, reports, or users..." 
+                           class="w-full bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700 rounded-full pl-10 pr-4 py-2 text-sm text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:border-iceblue-500 dark:focus:border-iceblue transition-colors">
                 </div>
             </div>
 
-            <div class="flex items-center gap-4">
-                <button aria-label="Write a report" class="hidden sm:flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
-                    <i class="fa-regular fa-pen-to-square"></i> <span class="text-sm font-medium">Write</span>
+            <div class="flex-shrink-0 flex items-center gap-3">
+                <button class="md:hidden text-slate-500 dark:text-slate-400 p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
-                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block"></div>
-                <button class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">Sign In</button>
-                <button class="bg-slate-900 dark:bg-iceblue text-white dark:text-deepspace px-5 py-2 rounded-full text-sm font-bold hover:bg-slate-800 dark:hover:bg-white transition shadow-sm">
-                    Join Fidnu
-                </button>
-            </div>
+
+                <div class="relative group">
+                    <button class="bg-iceblue-500 dark:bg-iceblue text-white dark:text-deepspace px-5 py-2 rounded-full text-sm font-bold hover:bg-iceblue-400 dark:hover:bg-white transition shadow-sm flex items-center gap-2">
+                        Get Started <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
+                    </button>
+                    <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg py-2 hidden group-hover:block transition z-50">
+                        <a href="#" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 font-medium">Log In</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 font-medium">Sign Up</a>
+                    </div>
+                </div>
+
+                </div>
         </div>
     </nav>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row gap-8">
         
-        <div class="w-full lg:w-2/3">
-            
-            <div class="flex items-center justify-between mb-6 border-b border-slate-200 dark:border-slate-800 pb-3">
-                <div class="flex gap-2">
-                    <button class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white px-4 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 transition">
-                        <i class="fa-solid fa-fire text-orange-500"></i> Hot
-                    </button>
-                    <button class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2 transition">
-                        <i class="fa-solid fa-certificate text-iceblue-500 dark:text-iceblue"></i> New
-                    </button>
-                    <button class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 px-4 py-1.5 rounded-full text-sm font-medium flex items-center gap-2 transition">
-                        <i class="fa-solid fa-arrow-up-right-dots"></i> Top
-                    </button>
-                </div>
+        <section class="w-full lg:w-2/3 min-w-0"> <div class="flex items-center gap-2 mb-6 border-b border-slate-200 dark:border-slate-800 pb-3 overflow-x-auto no-scrollbar">
+                <button class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white px-4 py-1.5 rounded-full text-sm font-bold flex-shrink-0 transition">
+                    Hot Discussions
+                </button>
+                <button class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 px-4 py-1.5 rounded-full text-sm font-medium flex-shrink-0 transition">
+                    Latest Reports
+                </button>
             </div>
 
-            <article class="flex gap-4 p-5 mb-4 bg-white dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition group shadow-sm dark:shadow-none">
-                
-                <div class="flex flex-col items-center gap-1.5 pt-1">
-                    <button class="text-slate-400 hover:text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-500/10 p-1 rounded transition"><i class="fa-solid fa-arrow-up text-lg"></i></button>
-                    <span class="text-sm font-bold text-slate-900 dark:text-slate-100">12.4k</span>
-                    <button class="text-slate-400 hover:text-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 p-1 rounded transition"><i class="fa-solid fa-arrow-down text-lg"></i></button>
-                </div>
-
-                <div class="flex-1">
-                    <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2">
-                        <a href="#" class="font-bold text-slate-900 dark:text-white hover:underline flex items-center gap-1">
-                            <div class="w-4 h-4 rounded-full bg-iceblue-500 dark:bg-iceblue flex items-center justify-center text-[8px] text-white dark:text-deepspace"><i class="fa-solid fa-leaf"></i></div>
-                            f/Environment
+            <article class="flex flex-col sm:flex-row gap-4 p-5 mb-5 bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition group shadow-sm dark:shadow-none break-words">
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2.5 flex-wrap">
+                        <a href="#" class="font-bold text-amber-600 dark:text-amber-500 uppercase tracking-wider hover:underline flex items-center gap-1.5">
+                            <i class="fa-solid fa-hand-holding-heart"></i> Humanitarian
                         </a>
                         <span>•</span>
-                        <span>Posted by <a href="#" class="hover:text-slate-700 dark:hover:text-slate-200">u/Coesse</a></span>
-                        <span>•</span>
-                        <span>4 hours ago</span>
+                        <span>May 19, 2026</span>
                     </div>
-
-                    <a href="#" class="block group-hover:opacity-80 transition">
-                        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2 leading-tight">
-                            Deforestation Trends in the Amazon Basin: A 2026 Data Synthesis
-                        </h2>
-                        <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-2 leading-relaxed font-sans mb-3">
-                            Utilizing advanced satellite metrics and local reporting to assess the real impact of new enforcement policies across major sovereign ecological zones. Data reveals an unexpected shift in micro-climate patterns over the last 18 months, suggesting that current interventions might be misdirected.
-                        </p>
-                    </a>
-
-                    <div class="flex items-center justify-between mt-1 text-xs text-slate-500 dark:text-slate-400 font-medium">
-                        <div class="flex gap-4">
-                            <button class="flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800 px-2 py-1.5 rounded transition">
-                                <i class="fa-regular fa-message"></i> 248 Comments
-                            </button>
-                            <button class="flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800 px-2 py-1.5 rounded transition">
-                                <i class="fa-solid fa-share"></i> Share
-                            </button>
-                            <button class="flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800 px-2 py-1.5 rounded transition">
-                                <i class="fa-regular fa-bookmark"></i> Save
-                            </button>
-                        </div>
-                        <span class="bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-full">12 min read</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="flex gap-4 p-5 mb-4 bg-white dark:bg-slate-900/30 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition group shadow-sm dark:shadow-none">
-                <div class="flex flex-col items-center gap-1.5 pt-1">
-                    <button class="text-slate-400 hover:text-orange-500 hover:bg-orange-50 dark:hover:bg-orange-500/10 p-1 rounded transition"><i class="fa-solid fa-arrow-up text-lg"></i></button>
-                    <span class="text-sm font-bold text-slate-900 dark:text-slate-100">8.1k</span>
-                    <button class="text-slate-400 hover:text-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-500/10 p-1 rounded transition"><i class="fa-solid fa-arrow-down text-lg"></i></button>
-                </div>
-                <div class="flex-1">
-                    <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2">
-                        <a href="#" class="font-bold text-slate-900 dark:text-white hover:underline flex items-center gap-1">
-                            <div class="w-4 h-4 rounded-full bg-amber-500 flex items-center justify-center text-[8px] text-white"><i class="fa-solid fa-hand-holding-heart"></i></div>
-                            f/Humanitarian
-                        </a>
-                        <span>•</span>
-                        <span>Posted by <a href="#" class="hover:text-slate-700 dark:hover:text-slate-200">u/ReliefWatch</a></span>
-                        <span>•</span>
-                        <span>8 hours ago</span>
-                    </div>
-                    <a href="#" class="block group-hover:opacity-80 transition">
-                        <h2 class="font-serif text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2 leading-tight">
+                    <a href="#" class="block group-hover:opacity-90 transition">
+                        <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2.5 leading-snug">
                             Addressing the Invisible Crisis: Water Scarcity in Refugee Settlements
                         </h2>
-                        <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-2 leading-relaxed font-sans mb-3">
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed font-sans mb-4">
                             A comprehensive field report analyzing infrastructure challenges and tech-driven resource allocation strategies deployed in global crisis zones this quarter.
                         </p>
                     </a>
-                    <div class="flex items-center justify-between mt-1 text-xs text-slate-500 dark:text-slate-400 font-medium">
-                        <div class="flex gap-4">
-                            <button class="flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800 px-2 py-1.5 rounded transition">
-                                <i class="fa-regular fa-message"></i> 156 Comments
-                            </button>
-                            <button class="flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800 px-2 py-1.5 rounded transition">
-                                <i class="fa-solid fa-share"></i> Share
-                            </button>
-                            <button class="flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800 px-2 py-1.5 rounded transition">
-                                <i class="fa-regular fa-bookmark"></i> Save
-                            </button>
+                    <div class="flex items-center justify-between mt-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">C</div>
+                            <span>Coesse</span>
                         </div>
-                        <span class="bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-full">8 min read</span>
+                        <div class="flex items-center gap-4">
+                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-comment"></i> 156</span>
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up"></i> 8.1k</span>
+                        </div>
                     </div>
                 </div>
             </article>
 
-        </div>
-
-        <aside class="w-full lg:w-1/3 space-y-5">
-            
-            <div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm dark:shadow-none">
-                <div class="bg-iceblue-500 dark:bg-iceblue h-12"></div>
-                <div class="p-5 relative">
-                    <div class="w-16 h-16 bg-white dark:bg-slate-900 border-4 border-white dark:border-slate-900 rounded-xl absolute -top-8 flex items-center justify-center text-2xl shadow-sm">
-                        🌍
+            <article class="flex flex-col sm:flex-row gap-4 p-5 mb-5 bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-slate-300 dark:hover:border-slate-600 transition group shadow-sm dark:shadow-none break-words">
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2.5 flex-wrap">
+                        <a href="#" class="font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-wider hover:underline flex items-center gap-1.5">
+                            <i class="fa-solid fa-leaf"></i> Environmental
+                        </a>
+                        <span>•</span>
+                        <span>May 18, 2026</span>
                     </div>
-                    <h3 class="mt-8 text-lg font-bold text-slate-900 dark:text-white">About Fidnu</h3>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                        The premier global network combining rigorous field reports (Medium style) with active community discourse (Reddit style) on humanitarian action, environmental policy, and world issues.
-                    </p>
-                    
-                    <div class="flex border-t border-slate-200 dark:border-slate-800 mt-4 pt-4">
-                        <div class="w-1/2">
-                            <div class="font-bold text-slate-900 dark:text-white">154k</div>
-                            <div class="text-xs text-slate-500">Members</div>
+                    <a href="#" class="block group-hover:opacity-90 transition">
+                        <h2 class="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2.5 leading-snug">
+                            Deforestation Trends in the Amazon Basin: A 2026 Data Synthesis
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 leading-relaxed font-sans mb-4">
+                            Utilizing advanced satellite metrics and local reporting to assess the real impact of new enforcement policies across major sovereign ecological zones.
+                        </p>
+                    </a>
+                    <div class="flex items-center justify-between mt-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">E</div>
+                            <span>EcoWatch</span>
                         </div>
-                        <div class="w-1/2">
-                            <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-green-500"></span> 1.2k
-                            </div>
-                            <div class="text-xs text-slate-500">Online</div>
+                        <div class="flex items-center gap-4">
+                            <span class="flex items-center gap-1.5"><i class="fa-regular fa-comment"></i> 248</span>
+                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-arrow-up"></i> 12.4k</span>
                         </div>
                     </div>
-
-                    <button class="w-full mt-5 bg-slate-900 dark:bg-white text-white dark:text-deepspace py-2 rounded-full text-sm font-bold hover:opacity-90 transition">
-                        Create Post
-                    </button>
                 </div>
+            </article>
+
+        </section>
+
+        <aside class="w-full lg:w-1/3 space-y-6">
+            
+            <div class="bg-white dark:bg-slate-900/40 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+                <h1 class="text-xl font-bold text-slate-900 dark:text-white mb-2 leading-tight">
+                    Voices for <span class="text-iceblue-500 dark:text-iceblue">Humanity</span> & the Planet
+                </h1>
+                <p class="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed mb-6">
+                    Join Fidnu, the premier global network for humanitarian action, environmental advocacy, and critical world issues.
+                </p>
+                <button class="w-full bg-iceblue-500 dark:bg-iceblue text-white dark:text-deepspace py-2.5 rounded-full text-sm font-bold hover:bg-iceblue-400 dark:hover:bg-white transition shadow-sm">
+                    Publish Report
+                </button>
             </div>
 
-            <div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm dark:shadow-none">
-                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Trending Communities</h3>
+            <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm dark:shadow-none">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4">Active Community Groups</h3>
                 <ul class="space-y-4">
                     <li class="flex items-center justify-between">
                         <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm"><i class="fa-solid fa-seedling"></i></div>
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold border border-emerald-100 dark:border-emerald-800/50">CC</div>
                             <div>
-                                <a href="#" class="text-sm font-bold text-slate-900 dark:text-white hover:underline">f/ClimateAction</a>
-                                <p class="text-xs text-slate-500">52k members</p>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white hover:underline cursor-pointer">Climate Coalition</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">12.4k members</p>
                             </div>
                         </div>
-                        <button class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold px-3 py-1.5 rounded-full transition">Join</button>
-                    </li>
-                    <li class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm"><i class="fa-solid fa-scale-balanced"></i></div>
-                            <div>
-                                <a href="#" class="text-sm font-bold text-slate-900 dark:text-white hover:underline">f/WorldPolicy</a>
-                                <p class="text-xs text-slate-500">89k members</p>
-                            </div>
-                        </div>
-                        <button class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold px-3 py-1.5 rounded-full transition">Join</button>
+                        <button class="bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-bold px-4 py-1.5 rounded-full transition">Join</button>
                     </li>
                 </ul>
             </div>
 
-            <div class="text-xs text-slate-500 dark:text-slate-400 flex flex-wrap gap-x-4 gap-y-2 px-2">
-                <a href="#" class="hover:underline">User Agreement</a>
-                <a href="legal.html" class="hover:underline">Privacy Policy</a>
-                <a href="legal.html" class="hover:underline text-red-500 dark:text-red-400">Account Deletion</a>
-                <a href="contact.html" class="hover:underline">Contact Admins</a>
-                <div class="w-full mt-2">Fidnu © 2026. All rights reserved.</div>
-            </div>
-
         </aside>
     </main>
+
+    <footer class="bg-white dark:bg-slate-900/30 border-t border-slate-200 dark:border-slate-800 mt-12 pt-12 pb-6 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+                
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">Explore</h4>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Home</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Popular</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Search</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">Community</h4>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Community Rules</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Content Guidelines</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Code of Conduct</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">Legal</h4>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Privacy Policy</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Terms of Service</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Copyright Notice</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Accessibility Statement</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Disclaimer</a></li>
+                        <li><a href="legal.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Data Usage Statement</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">About</h4>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-span-2 md:col-span-3 lg:col-span-1">
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-4">Language</h4>
+                    <ul class="grid grid-cols-2 gap-x-2 gap-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">English (UK)</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">English (US)</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Français</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Deutsch</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Español</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">Svenska</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">日本語</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">한국어</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">繁體中文</a></li>
+                        <li><a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition">简体中文</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-200 dark:border-slate-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-slate-500 dark:text-slate-500">
+                    &copy; 2026 Fidnu. All rights reserved.
+                </p>
+                <p class="text-xs font-serif italic text-slate-400 dark:text-slate-500 tracking-wide text-center">
+                    “And ye shall know the truth, and the truth shall make you free.”
+                </p>
+                <div class="flex items-center gap-4 text-slate-400">
+                    <a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition"><i class="fa-brands fa-twitter text-lg"></i></a>
+                    <a href="#" class="hover:text-iceblue-500 dark:hover:text-iceblue transition"><i class="fa-brands fa-github text-lg"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 
 </body>
 </html>

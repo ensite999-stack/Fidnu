@@ -46,7 +46,7 @@
     </style>
 </head>
 
-<body class="bg-slate-50 text-slate-900 dark:bg-deepspace dark:text-slate-200 antialiased transition-colors duration-300 selection:bg-iceblue/30 selection:text-iceblue-500 dark:selection:text-iceblue">
+<body class="bg-slate-50 text-slate-900 dark:bg-deepspace dark:text-slate-200 antialiased transition-colors duration-300 selection:bg-iceblue/30 selection:text-iceblue-500 dark:selection:text-iceblue relative">
 
     <nav role="navigation" class="bg-white dark:bg-deepspace border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
@@ -155,7 +155,6 @@
                 </div>
             </div>
         </article>
-
     </main>
 
     <footer class="bg-deepspace border-t border-slate-800 mt-12 pt-16 pb-8">
@@ -239,6 +238,62 @@
 
         </div>
     </footer>
+
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full sm:w-auto sm:bottom-6 sm:left-6 sm:max-w-sm z-[100] transform transition-transform duration-500 translate-y-full">
+        <div class="bg-white dark:bg-slate-900 border-t sm:border border-slate-200 dark:border-slate-800 sm:rounded-2xl shadow-2xl p-5 sm:p-6">
+            <div class="flex items-start gap-3 mb-4">
+                <i class="fa-solid fa-cookie-bite text-iceblue-500 text-lg mt-0.5"></i>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white">We Value Your Privacy</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+                        We use minimal cookies to enhance your experience and secure our platform. No invasive tracking is employed. <a href="legal.html" class="text-iceblue-500 hover:underline">Read Policy</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button id="accept-cookies" class="w-full bg-iceblue-500 hover:bg-iceblue-400 text-white dark:bg-iceblue dark:text-deepspace dark:hover:bg-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm">
+                    Accept All
+                </button>
+                <button id="decline-cookies" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 px-4 py-2 rounded-xl text-xs font-semibold transition">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const declineBtn = document.getElementById('decline-cookies');
+
+            // 检查本地存储，如果用户未做过选择，则延迟 0.5 秒优雅弹出
+            if (!localStorage.getItem('fidnu_cookie_consent')) {
+                setTimeout(() => {
+                    banner.classList.remove('translate-y-full');
+                }, 500);
+            }
+
+            const hideBanner = () => {
+                banner.classList.add('translate-y-full');
+                // 等待过渡动画结束后再从 DOM 中彻底移除
+                setTimeout(() => banner.remove(), 500);
+            };
+
+            // 用户点击接受
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('fidnu_cookie_consent', 'accepted');
+                hideBanner();
+                // 此处可添加加载必要统计脚本的逻辑
+            });
+
+            // 用户点击拒绝
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('fidnu_cookie_consent', 'declined');
+                hideBanner();
+            });
+        });
+    </script>
 
 </body>
 </html>

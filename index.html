@@ -47,7 +47,7 @@
 
 <body class="bg-white text-slate-900 dark:bg-deepspace dark:text-slate-200 antialiased transition-colors duration-300 selection:bg-iceblue/30 selection:text-iceblue-500 dark:selection:text-iceblue relative overflow-x-hidden">
 
-    <nav role="navigation" class="bg-white/90 dark:bg-deepspace/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/60 transition-colors">
+    <nav role="navigation" class="bg-white/90 dark:bg-deepspace/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/60 sticky top-0 z-50 transition-colors">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-[64px] flex items-center justify-between">
             
             <a href="#" aria-label="Fidnu Home" class="flex-shrink-0 flex items-center notranslate" translate="no">
@@ -107,7 +107,7 @@
             </div>
             
             <a href="#" class="block cursor-pointer">
-                <h2 class="font-serif text-2xl md:text-3xl font-black text-slate-900 dark:text-slate-100 mb-3 leading-snug group-hover:text-iceblue-500 transition-colors">
+                <h2 class="font-serif text-2xl md:text-3xl font-black text-slate-900 dark:text-slate-100 mb-3 leading-snug transition-opacity hover:opacity-80">
                     Addressing the Invisible Crisis: Water Scarcity in Refugee Settlements
                 </h2>
                 <p class="text-[16px] text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed font-sans mb-5">
@@ -139,7 +139,7 @@
             
             <div class="flex items-start justify-between gap-6 md:gap-10">
                 <a href="#" class="flex-1 block cursor-pointer">
-                    <h2 class="font-serif text-2xl md:text-3xl font-black text-slate-900 dark:text-slate-100 mb-3 leading-snug group-hover:text-iceblue-500 transition-colors">
+                    <h2 class="font-serif text-2xl md:text-3xl font-black text-slate-900 dark:text-slate-100 mb-3 leading-snug transition-opacity hover:opacity-80">
                         Deforestation Trends in the Amazon Basin: A 2026 Data Synthesis
                     </h2>
                     <p class="hidden sm:block text-[16px] text-slate-600 dark:text-slate-400 line-clamp-2 leading-relaxed font-sans mb-5">
@@ -169,7 +169,7 @@
     <footer class="bg-black border-t border-slate-800 pt-16 pb-12 font-sans">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
                 
                 <div>
                     <h3 class="text-lg font-bold text-slate-300 mb-3">Explore</h3>
@@ -193,12 +193,25 @@
                     </ul>
                 </div>
 
+                <div>
+                    <h3 class="text-lg font-bold text-slate-300 mb-3">Legal & Policies</h3>
+                    <div class="border-b border-slate-700 mb-5"></div>
+                    <ul class="flex flex-col space-y-4 text-[15px] text-white font-medium">
+                        <li><a href="legal.html">Privacy Policy</a></li>
+                        <li><a href="legal.html">Terms of Service</a></li>
+                        <li><a href="legal.html">Copyright Notice</a></li>
+                        <li><a href="legal.html">Accessibility</a></li>
+                        <li><a href="legal.html">Disclaimer</a></li>
+                        <li><a href="legal.html">Data Usage</a></li>
+                    </ul>
+                </div>
+
             </div>
 
             <div class="border-t border-slate-800 pt-8 mb-12">
                 <h3 class="text-lg font-bold text-slate-300 mb-3">Language</h3>
                 <div class="border-b border-slate-700 mb-5"></div>
-                <ul class="grid grid-cols-2 sm:grid-cols-5 gap-x-6 gap-y-5 text-[15px] text-white font-bold uppercase tracking-wider">
+                <ul class="grid grid-cols-2 sm:grid-cols-5 gap-x-6 gap-y-5 text-[15px] text-white font-bold tracking-wide">
                     <li><a href="#">English (UK)</a></li>
                     <li><a href="#">English (US)</a></li>
                     <li><a href="#">Français</a></li>
@@ -212,33 +225,22 @@
                 </ul>
             </div>
 
-            <div class="border-t border-slate-800 pt-8 flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8">
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 
-                <div class="flex flex-col gap-4">
-                    <ul class="flex flex-wrap items-center gap-y-2 text-[13px] text-white font-medium">
-                        <li><a href="legal.html">Privacy Policy</a></li>
-                        <li><span class="mx-2.5 text-slate-600 font-normal">|</span></li>
-                        <li><a href="legal.html">Terms of Service</a></li>
-                        <li><span class="mx-2.5 text-slate-600 font-normal">|</span></li>
-                        <li><a href="legal.html">Copyright Notice</a></li>
-                        <li><span class="mx-2.5 text-slate-600 font-normal">|</span></li>
-                        <li><a href="legal.html">Accessibility Statement</a></li>
-                        <li><span class="mx-2.5 text-slate-600 font-normal">|</span></li>
-                        <li><a href="legal.html">Disclaimer</a></li>
-                        <li><span class="mx-2.5 text-slate-600 font-normal">|</span></li>
-                        <li><a href="legal.html">Data Usage Statement</a></li>
-                    </ul>
-
-                    <p class="text-xs text-slate-500">
+                <div>
+                    <p class="text-xs text-slate-500 mb-1">
                         &copy; 2026 Fidnu. All rights reserved.
+                    </p>
+                    <p class="text-xs font-serif italic text-slate-600 tracking-wide">
+                        “And ye shall know the truth, and the truth shall make you free.”
                     </p>
                 </div>
 
                 <div class="flex items-center gap-4 text-white">
-                    <span class="text-sm font-bold mr-1">Follow Us:</span>
-                    <a href="#" aria-label="Facebook" class="text-2xl"><i class="fa-brands fa-facebook-square"></i></a>
-                    <a href="#" aria-label="Instagram" class="text-2xl"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="X (Twitter)" class="text-2xl"><i class="fa-brands fa-x-twitter"></i></a>
+                    <span class="text-sm font-bold mr-1 text-slate-300">Follow Us:</span>
+                    <a href="#" aria-label="Facebook" class="text-2xl hover:text-slate-300 transition-colors"><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="#" aria-label="Instagram" class="text-2xl hover:text-slate-300 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" class="text-2xl hover:text-slate-300 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
                 </div>
 
             </div>
